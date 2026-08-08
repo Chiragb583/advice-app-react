@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -6,7 +7,6 @@ function App() {
   const [advice, setAdvice] = useState("");
 
   const fetchAdvice = async () => {
-    console.log("Button CLicked");
     const response = await axios.get("https://api.adviceslip.com/advice");
     setAdvice(response.data.slip.advice);
   };
